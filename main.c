@@ -19,16 +19,25 @@ int main(void) {
 	p.y = 2;
 	translate(&c[1], &p);
 	printCircle(c[1]);
-	printf("isValid: %d", circleIsValid(&c[1]));
-
+	printf("isValid: %d\n", circleIsValid(&c[1]));
+	
 	/*answer to exercise 7.b*/
 	int n; /*number of numbers to read*/
 	/*readin n and check that is is OK*/
+	printf("enter number of elements: ");
+	scanf("%d", &n); 
+	if(n<=0) {
+		printf("invalid\n");
+		return 0; 
+	}
 
 	int *numbers = malloc(sizeof(int) * n); /*the numbers read*/
 
 	/*readin the n numbers in the array numbers*/
+	for(int i=0; i<n; i++){
+		scanf(" %d", &numbers[i]);
 
+	}
 	if (isJollyJumber(numbers, n)) {
 		printf("it is a Jolly Jumper");}
 	else {
